@@ -1,0 +1,22 @@
+#boyutu n olan tek boyutlu bir dizi üretip bu diziyi bubble sort ile sıralayınız
+import random
+a=random.randint(0,100)
+def generate_an_array(n):
+    my_array=[]
+    for i in range(n):
+        s=random.randint(0,100)
+        my_array.append(s)
+    return my_array
+my_arr_1=generate_an_array(10)
+print(my_arr_1)
+
+    
+
+#bubble sort
+def my_bubble_sort(my_arr):
+  for j in range(len(my_arr)):
+    if(my_arr[j]<my_arr[j+1]):
+      t=my_arr[j]
+      my_arr[j]=my_arr[j+1]
+      my_arr[j+1]=t
+  return my_arr
