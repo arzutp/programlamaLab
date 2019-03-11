@@ -1,0 +1,74 @@
+#2 ye 2 lik bir matrisin determinantı
+def det_from_2_by_2(m_1):
+    s1=m_1[0][0]*m_1[1][1]
+    s2=m_1[0][1]*m_1[1][0]
+    s3=s1-s2
+    return s3
+
+matrix_1=[[4,5],[2,4]]
+det_from_2_by_2(matrix_1)
+    
+
+def delete_row_col_from_matris(m_1,m,n):
+    result=[]
+    size_1=(len(m_1)) #satır sayısı
+    size_2=(len(m_1[0])) #sutun sayısı
+    for i in range(size_1):
+        if(i==m):
+            continue
+        row_1=[]
+        for j in range(size_2):
+            if(j==n):
+                continue
+            row_1.append(m_1[i][j])
+            result.append(row_1)
+         
+    return result
+
+matrix=[[6,5],[4,3]]
+delete_row_col_from_matris(matrix,0,0)
+
+            
+
+def det_from_3_by_3(m_1):
+    a_1=m_1[0][0]
+    a_2=delete_row_col_from_matrix(m_1,0,0)
+    a_3=det_from_2_by_2(a_2)
+    a_4=a_1*a_3
+
+    b_1=m_1[0][1]
+    b_2=delete_row_col_from_matrix(m_1,0,1)
+    b_3=det_from_2_by_2(b_2)
+    b_4=b_1*b_3
+
+    c_1=m_1[0][2]
+    c_2=delete_row_col_from_matrix(m_1,0,2)
+    c_3=det_from_2_by_2(c_2)
+    c_4=c_1*c_3
+
+    return a_4-b_4+c_4
+
+
+
+def det_from_4_by_4(m_1):
+    a_1=m_1[0][0]
+    a_2=delete_row_col_from_matrix(m_1,0,0)
+    a_3=det_from_3_by_3(a_2)
+    a_4=a_1*a_3
+
+    b_1=m_1[0][1]
+    b_2=delete_row_col_from_matrix(m_1,0,1)
+    b_3=det_from_3_by_3(b_2)
+    b_4=b_1*b_3
+
+    c_1=m_1[0][2]
+    c_2=delete_row_col_from_matrix(m_1,0,2)
+    c_3=det_from_3_by_3(c_2)
+    c_4=c_1*c_3
+
+    d_1=m_1[0][3]
+    d_2=delete_row_col_from_matrix(m_1,0,3)
+    d_3=det_from_3_by_3(d_2)
+    d_4=d_1*d_3
+
+    return a_4-b_4+c_4
