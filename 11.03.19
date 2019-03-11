@@ -1,0 +1,11 @@
+#bir sayının asal çarpanları
+def my_carpan(n):
+  asaldir=True
+  for i in range(2,n):
+      if(n%i==0):
+          print(i)
+    
+          asaldir=False
+  print(asaldir)
+      
+n=my_carpan(15)
