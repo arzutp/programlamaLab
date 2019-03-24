@@ -1,0 +1,21 @@
+import random
+def generate_an_array(n):
+    #n=10
+    my_array=[]
+    for i in range(n):
+        s=random.randint(0,100)
+        my_array.append(s)
+    return my_array
+my_array_1=generate_an_array(10)
+print(my_array_1)
+
+def my_bubble_sort(my_array):
+    for i in range(len(my_array)-1,0,-1):
+        for j in range(i):
+            if(my_array[j]>my_array[j+1]):
+               t=my_array[j]
+               my_array[j]=my_array[j+1]
+               my_array[j+1]=t
+
+my_bubble_sort(my_array_1)
+print(my_array_1)
