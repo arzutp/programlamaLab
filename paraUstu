@@ -1,0 +1,19 @@
+def recMC(coinVolmeList,change,knowResults):
+    minCoin=change
+    if(change in coinVolmeList):
+        knowResults[change]=1 #hafızaya al
+        return 1
+    elif(knowResults[change]>0): #hafızada varsa onu al
+        return knowResults[change]
+    else:
+        for i in [c for c in coinVolmeList if c<=change]: #listeyi otamatik doldurmak için expression
+            numCoin=1+recMC(coinVolmeList,change-i,knowResults)  #bozuk para verdim 1 tane devamini hesapla
+            if(numCoin<minCoin):
+                minCoin=numCoin
+                knowResults[change]=minCoin
+    return minCoin
+
+
+a=recMC([1,5,10,25],40,[0]*41)
+print(a)
+            
