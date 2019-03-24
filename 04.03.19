@@ -3,6 +3,7 @@ matrix_2=[[5,2,3],[6,2,9]]
 alpha=10
 
 def my_matrix_addition(m_1,m_2):
+  result=[]
   result.append([]) #liste ekle
   for column in range(len(m_1[0])):
     #print(m_1[row][column],end "")
