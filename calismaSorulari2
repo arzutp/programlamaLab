@@ -9,7 +9,7 @@ def palindrom(myString):
             break
     return a
 
-i='nedden'
+i='neden'
 print(palindrom(i))
            
         
